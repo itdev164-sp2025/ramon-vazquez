@@ -1,8 +1,6 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
- */
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+})
 
 /**
  * @type {import('gatsby').GatsbyConfig}
@@ -23,10 +21,10 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: `hi2oshyah48t`,
-        acccessToken: `_A6KuL-fpC-cSafbWWbvZ1yQOkXD7V-XEyUyGoHmQOs`
+        spaceId: `${process.env.SPACE_ID}`,
+        accessToken: `${process.env.ACCESS_TOKEN}`
       }
-    }
+    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
