@@ -10,7 +10,7 @@ const BlogPost = ({ data }) => {
             <h1>{title}</h1>
             <div dangerouslySetInnerHTML={{ __html: body.childMarkdownRemark.html }}></div>
         </Layout>
-    )
+    );
 }
 
 export default BlogPost
