@@ -1,6 +1,14 @@
+/**
+ * Configure your Gatsby site with this file.
+ *
+ * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
+ */
+
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`
-})
+});
+
+console.log(process.env); // Add this line here!
 
 /**
  * @type {import('gatsby').GatsbyConfig}
@@ -26,6 +34,7 @@ module.exports = {
       }
     },
     `gatsby-plugin-image`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
