@@ -8,6 +8,7 @@ import * as styles from "../components/index.module.css"
 
 const IndexPage = ({ data }) => (
   <Layout>
+    <Seo Title="Home" />
     <ul className={styles.list}>
       {
         data.allContentfulBlogPost.edges.map(edge => (
@@ -23,6 +24,7 @@ const IndexPage = ({ data }) => (
             </div>
           </li>
         ))
+        
       }
     </ul>
   </Layout>
