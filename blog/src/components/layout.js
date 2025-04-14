@@ -1,15 +1,22 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled, { ThemeProvider } from "styled-components"
-import Gray from './themes/Gray'  // fixed import (default export)
+
+import { Gray } from './themes/Gray'
 import { Header } from "./Header"
 import "./layout.css"
 
-const Container = styled.div`
+
+const Content = styled.div`
   margin: 0 auto;
-  max-width: 960px;
-  padding: 0 1.0875rem 1.45rem;
+  max-width: var(--size-content);
+  padding: var(--size-gutter);
 `
+
+const Footer = styled.footer`
+  margin-top: var(--space-5);
+  font-size: var(--font-sm);
+  `
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -23,11 +30,16 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <ThemeProvider theme={Gray}>
+    <ThemeProvider theme={Gray} >
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <Container>
+      <Content>
         <main>{children}</main>
-      </Container>
+        <Footer>
+            {new Date().getFullYear()} &middot; Built with
+          {` `}
+          <a href="https://www.gatsbyjs.com">Gatsby</a>
+        </Footer>
+      </Content>
     </ThemeProvider>
   )
 }
