@@ -8,7 +8,10 @@ const theme = {
 const Gray = {
   background: "#f8f8f8",
   text: "#333",
-  accent: "#ccc"
+  accent: "#ccc",
+  header: {
+    backgroundColor: "#e0e0e0" // 🎨 Add the missing property
+  }
 };
 
 export default Gray;

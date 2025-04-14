@@ -20,7 +20,7 @@ const IndexPage = ({ data }) => (
                 />
             </div>
             <div>
-              {edge.node.childMarkdownRemark.excerpt}
+              {edge.node.body.childMarkdownRemark.excerpt}
             </div>
           </ListItem>
         ))
